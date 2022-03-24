@@ -49,7 +49,7 @@ for row in cur.execute('SELECT ShipCountry,count(Orders.OrderID),sum(OrdersDetai
   print(row)
   
 #11
-for row in cur.execute('SELECT  ProductName,UnitPrice,UnitPrice-(select avg(UnitPrice) from Products ) from Products where UnitPrice >= (select avg(UnitPrice) from Products) order by UnitPrice desc'):
+for row in cur.execute('SELECT ProductName,UnitPrice,UnitPrice-(select avg(UnitPrice)from Products) from Products where UnitPrice >= (select avg(UnitPrice) from Products) order by UnitPrice desc'):
   print(row)
 
 #12
